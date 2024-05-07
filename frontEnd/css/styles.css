@@ -1,0 +1,18 @@
+
+.contenedorTituloBoton{
+    margin-top: 8%;
+}
+
+
+#menuPrincipal{
+    background-color: black;
+}
+
+#tituloMenu{
+    color: white;
+}
+
+div#contenedor.row{
+    height: 100%;
+}
+
