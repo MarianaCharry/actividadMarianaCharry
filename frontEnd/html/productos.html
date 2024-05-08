@@ -12,7 +12,7 @@
         <div class="sidebar">
             <h2>Shoes Store</h2>
             <ul>
-                <li><a href="#">Dashboard</a></li>
+                <li><a href="../html/dashboard.html">Dashboard</a></li>
                 <li><a href="../html/menuPrincipal.html">Clientes</a></li>
                 <li><a href="../html/productos.html">Productos</a></li>
                 <li><a href="../html/ventas.html">Ventas</a></li>
@@ -30,23 +30,15 @@
                 </div>
                 <div class="contenedor d-flex justify-content-evenly">
                     <div>
-                        <h6>Filtrar por nombre</h6>
+                        <h6>Filtrar por nombre:</h6>
                         <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un nombre"
+                            <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un producto"
                                 aria-label="Search">
         
                         </form>
                     </div>
                     <div>
-                        <h6>Filtrar por ciudad</h6>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Ingrese una ciudad"
-                                aria-label="Search">
-        
-                        </form>
-                    </div>
-                    <div>
-                        <h6>Filtrar por estado</h6>
+                        <h6>Filtrar por estado:</h6>
                         <form class="form-inline my-2 my-lg-0">
         
                             <select class="form-select" aria-label="Default select example">
@@ -57,12 +49,9 @@
                             </select>
                         </form>
                     </div>
-                    
+                    <div><button type="button" class="btn btn-primary">Filtrar</button></div>
+                    <div><button type="button" class="btn btn-success">Agregar Producto</button></div>
         
-                </div>
-                <div id="contenedorBotonesFiltros">
-                    <div><button type="button" class="btn btn-success">Limpiar filtros</button></div>
-                    <div><button type="button" class="btn btn-success">Aplicar filtros</button></div>
                 </div>
                 <div class="row">
                     <div>
@@ -70,14 +59,13 @@
                             <thead>
         
                                 <tr id="encabezado">
-                                    <td>ID Cliente</td>
-                                    <td>Tipo Identificación</td>
-                                    <td>Identificación</td>
-                                    <td>Nombre</td>
-                                    <td>Apellido</td>
-                                    <td>Teléfono</td>
-                                    <td>Dirección</td>
-                                    <td>Ciudad</td>
+                                    <td>ID Producto</td>
+                                    <td>Nombre Producto</td>
+                                    <td>Descripción</td>
+                                    <td>Cantidad</td>
+                                    <td>Precio</td>
+                                    <td>% IVA</td>
+                                    <td>% Descuento</td>
                                     <td>Estado</td>
                                     <td>Acciones</td>
                                 </tr>

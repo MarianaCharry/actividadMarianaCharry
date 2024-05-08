@@ -12,7 +12,7 @@
         <div class="sidebar">
             <h2>Shoes Store</h2>
             <ul>
-                <li><a href="#">Dashboard</a></li>
+                <li><a href="../html/dashboard.html">Dashboard</a></li>
                 <li><a href="../html/menuPrincipal.html">Clientes</a></li>
                 <li><a href="../html/productos.html">Productos</a></li>
                 <li><a href="../html/ventas.html">Ventas</a></li>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="contenedor d-flex justify-content-evenly">
                     <div>
-                        <h6>Filtrar por cliente</h6>
+                        <h6>Filtrar por Cliente:</h6>
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un nombre"
                                 aria-label="Search">
@@ -38,31 +38,23 @@
                         </form>
                     </div>
                     <div>
-                        <h6>Fecha de venta-Desde:</h6>
+                        <h6>Fecha de Venta-Desde:</h6>
                         <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Ingrese una ciudad"
-                                aria-label="Search">
-        
+                            <input type="date" name="fechaVentaDesde" id="fechaVentaDesde">
                         </form>
                     </div>
                     <div>
-                        <h6>Fecha de venta-Hasta:</h6>
+                        <h6>Fecha de Venta-Hasta:</h6>
                         <form class="form-inline my-2 my-lg-0">
         
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleccione un estado</option>
-                                <option value="ACTIVO">ACTIVO</option>
-                                <option value="INACTIVO">INACTIVO</option>
-                                <option value="TODOS">TODOS</option>
-                            </select>
+                            <input type="date" name="fechaVentaHasta" id="fechaVentaHasta">
                         </form>
                     </div>
                     
         
                 </div>
                 <div id="contenedorBotonesFiltros">
-                    <div><button type="button" class="btn btn-success">Limpiar filtros</button></div>
-                    <div><button type="button" class="btn btn-success">Aplicar filtros</button></div>
+                    <div><button type="button" class="btn btn-primary">Filtrar</button></div>
                 </div>
                 <div class="row">
                     <div>
@@ -70,14 +62,10 @@
                             <thead>
         
                                 <tr id="encabezado">
+                                    <td>ID Venta</td>
                                     <td>ID Cliente</td>
-                                    <td>Tipo Identificación</td>
-                                    <td>Identificación</td>
-                                    <td>Nombre</td>
-                                    <td>Apellido</td>
-                                    <td>Teléfono</td>
-                                    <td>Dirección</td>
-                                    <td>Ciudad</td>
+                                    <td>Total</td>
+                                    <td>Fecha de Venta</td>
                                     <td>Estado</td>
                                     <td>Acciones</td>
                                 </tr>

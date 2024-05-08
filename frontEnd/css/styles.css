@@ -57,3 +57,7 @@ body {
     width: 30%;
     justify-content:end;
 }
+
+.contenedorTarjetas{
+    display: flex;
+}
