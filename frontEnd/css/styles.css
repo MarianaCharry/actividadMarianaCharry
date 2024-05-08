@@ -4,10 +4,6 @@
 }
 
 
-#menuPrincipal{
-    background-color: black;
-}
-
 #tituloMenu{
     color: white;
 }
@@ -16,3 +12,48 @@ div#contenedor.row{
     height: 100%;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+#contenedorBotonesFiltros{
+    display: flex;
+    width: 30%;
+    justify-content:end;
+}

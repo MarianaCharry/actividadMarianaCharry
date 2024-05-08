@@ -4,8 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../boostrap/bootstrap.css">
 </head>
 <body>
-    
+    <div class="container-fluid">
+        <div class="sidebar">
+            <h2>Shoes Store</h2>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="../html/menuPrincipal.html">Clientes</a></li>
+                <li><a href="../html/productos.html">Productos</a></li>
+                <li><a href="../html/ventas.html">Ventas</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="contenedorTituloBoton d-flex">
+                    <div>
+                        <h1 id="tituloPrincipalClientes">Ventas</h1>
+                    </div>
+                    <div><button type="button" class="btn btn-success" id="botonAgregarCliente">Agregar</button></div>
+        
+        
+                </div>
+                <div class="contenedor d-flex justify-content-evenly">
+                    <div>
+                        <h6>Filtrar por cliente</h6>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un nombre"
+                                aria-label="Search">
+        
+                        </form>
+                    </div>
+                    <div>
+                        <h6>Fecha de venta-Desde:</h6>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Ingrese una ciudad"
+                                aria-label="Search">
+        
+                        </form>
+                    </div>
+                    <div>
+                        <h6>Fecha de venta-Hasta:</h6>
+                        <form class="form-inline my-2 my-lg-0">
+        
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Seleccione un estado</option>
+                                <option value="ACTIVO">ACTIVO</option>
+                                <option value="INACTIVO">INACTIVO</option>
+                                <option value="TODOS">TODOS</option>
+                            </select>
+                        </form>
+                    </div>
+                    
+        
+                </div>
+                <div id="contenedorBotonesFiltros">
+                    <div><button type="button" class="btn btn-success">Limpiar filtros</button></div>
+                    <div><button type="button" class="btn btn-success">Aplicar filtros</button></div>
+                </div>
+                <div class="row">
+                    <div>
+                        <table class="table table-striped table-hover">
+                            <thead>
+        
+                                <tr id="encabezado">
+                                    <td>ID Cliente</td>
+                                    <td>Tipo Identificación</td>
+                                    <td>Identificación</td>
+                                    <td>Nombre</td>
+                                    <td>Apellido</td>
+                                    <td>Teléfono</td>
+                                    <td>Dirección</td>
+                                    <td>Ciudad</td>
+                                    <td>Estado</td>
+                                    <td>Acciones</td>
+                                </tr>
+                            </thead>
+        
+                            <tbody id="contenidoTabla">
+        
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

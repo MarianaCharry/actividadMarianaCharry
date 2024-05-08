@@ -35,6 +35,9 @@ public class clientes {
 	@Column (name="ciudad", nullable=false,length=36)
 	private String ciudad;
 	
+	@Column (name="correo_electronico", nullable=false,length=36)
+	private String correo_electronico;
+	
 	@Column (name="estado", nullable=false,length=36)
 	private String estado;
 
@@ -43,7 +46,8 @@ public class clientes {
 	}
 
 	public clientes(String id_cliente, String tipo_identificacion, String num_identificacion, String nombre,
-			String apellido, String telefono, String direccion, String ciudad, String estado) {
+			String apellido, String telefono, String direccion, String ciudad, String correo_electronico,
+			String estado) {
 		super();
 		this.id_cliente = id_cliente;
 		this.tipo_identificacion = tipo_identificacion;
@@ -53,6 +57,7 @@ public class clientes {
 		this.telefono = telefono;
 		this.direccion = direccion;
 		this.ciudad = ciudad;
+		this.correo_electronico = correo_electronico;
 		this.estado = estado;
 	}
 
@@ -120,6 +125,14 @@ public class clientes {
 		this.ciudad = ciudad;
 	}
 
+	public String getCorreo_electronico() {
+		return correo_electronico;
+	}
+
+	public void setCorreo_electronico(String correo_electronico) {
+		this.correo_electronico = correo_electronico;
+	}
+
 	public String getEstado() {
 		return estado;
 	}
@@ -127,6 +140,7 @@ public class clientes {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
 	
 	
 
