@@ -7,10 +7,10 @@ import org.springframework.data.repository.CrudRepository;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.moduloShoesStore.models.clientes;
+import com.example.moduloShoesStore.models.productos;
 
 @Repository
-public interface ICliente extends CrudRepository<clientes,String>{
+public interface IProducto extends CrudRepository<productos,String>{
 	@Query("SELECT c FROM clientes c WHERE "
 			+ "c.tipo_identificacion LIKE %?1% OR "
 			+ "c.identificacion LIKE %?1% OR "
@@ -21,5 +21,5 @@ public interface ICliente extends CrudRepository<clientes,String>{
 			+ "c.ciudad LIKE %?1% OR "
 			+ "c.correo_electronico LIKE %?1% OR "
 			+ "c.estado LIKE %?1%")
-	List<clientes>filtroCliente (String filtro);
+	List<productos>filtroProductos (String filtro);
 }

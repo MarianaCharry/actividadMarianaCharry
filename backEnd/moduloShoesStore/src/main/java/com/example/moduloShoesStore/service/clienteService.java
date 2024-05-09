@@ -1,6 +1,7 @@
 package com.example.moduloShoesStore.service;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,11 @@ public class clienteService implements IClienteService  {
 		Optional<clientes>clientes=data.findById(id_clientes);
 		
 		return clientes;
+	}
+	
+	@Override
+	public List<clientes> filtroCliente(String filtro) {
+		List <clientes> listaMedico=data.filtroCliente(filtro);
+		return listaMedico;
 	}
 }

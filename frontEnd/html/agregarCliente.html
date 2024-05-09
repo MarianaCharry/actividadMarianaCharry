@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar cliente</title>
+    <script src="../js/clientes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../boostrap/bootstrap.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
@@ -21,91 +24,73 @@
                 <li><a href="../html/ventas.html">Ventas</a></li>
             </ul>
         </div>
-        <div class="content">
-            <div class="container-fluid">
-                <h1 style="margin-top: 10%;">Agregar Nuevo Cliente</h1>
-        <div class="contenedorNuevoCliente">
-            <div>
-                <h6>Tipo de Identificación:</h6>
-                <form class="form-inline my-2 my-lg-0">
-
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Seleccione un estado</option>
-                        <option value="TI">TARJETA DE IDENTIDAD</option>
-                        <option value="CC">CÉDULA DE CIUDADANÍA</option>
-                        <option value="CE">CÉDULA DE EXTRANJERÍA</option>
+        <div class="container">
+            <h1 style="margin-top: 100px">Agregar Nuevo Cliente</h1>
+            <h6>Todos los campos con asterisco son obligatorios</h6>
+            <br>
+            <div class="row">
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Tipo de Identificación: *</label></b>
+                    <select name="" id="tipo_identificacion" class="form-select">
+                        <option value="" selected disabled>Selecciona una opción</option>
+                        <option value="RC">Registro Civil</option>
+                        <option value="TI">Tarjeta de Identidad</option>
+                        <option value="CC">Cédula de Ciudadanía</option>
+                        <option value="CE">Cédula de Extranjería</option>
                     </select>
-                </form>
-            </div>
+                </div>
 
-            <div>
-                <h6>N° Identificación:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un apellido"
-                        aria-label="Search">
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Identificación: *</label></b>
+                    <input type="number" id="identificacion" step="1" class="form-control"
+                        onfocusout="validarIdentificacion(this);" />
+                </div>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Nombre *</label></b>
+                    <input type="text" id="nombre_cliente" class="form-control"
+                        onfocusout="validarNombre_cliente(this);" />
+                </div>
 
-                </form>
-            </div>
-            <div>
-                <h6>Nombre:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un nombre"
-                        aria-label="Search">
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Apellido *</label></b>
+                    <input type="text" id="apellido_cliente" class="form-control"
+                        onfocusout="validarApellido_cliente(this);" />
+                </div>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Teléfono *</label></b>
+                    <input type="text" id="telefono" class="form-control" onfocusout="validarTelefono(this);" />
+                </div>
 
-                </form>
-            </div>
-            <div>
-                <h6>Apellido:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un apellido"
-                        aria-label="Search">
-
-                </form>
-            </div>
-            <div>
-                <h6>Teléfono:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un telefóno"
-                        aria-label="Search">
-
-                </form>
-            </div>
-            <div>
-                <h6>Dirección:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un nombre"
-                        aria-label="Search">
-
-                </form>
-            </div>
-            <div>
-                <h6>Ciudad:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un nombre"
-                        aria-label="Search">
-
-                </form>
-            </div>
-            <div>
-                <h6>Estado:</h6>
-                <form class="form-inline my-2 my-lg-0">
-
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Seleccione un estado</option>
-                        <option value="ACTIVO">ACTIVO</option>
-                        <option value="INACTIVO">INACTIVO</option>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Dirección *</label></b>
+                    <input type="text" id="direccion" class="form-control" onfocusout="validarDireccion(this);" />
+                </div>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Ciudad: *</label></b>
+                    <input type="text" id="ciudad" class="form-control" onfocusout="validarCiudad(this);" />
+                </div>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Correo: *</label></b>
+                    <input type="email" id="correo_electronico" class="form-control"
+                        onfocusout="validarCorreo(this);" />
+                </div>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Estado *</label></b>
+                    <select name="" id="estado" class="form-select" onfocusout="validarEstado(this);">
+                        <option value="" selected disabled style="font-weight: bold;">Selecciona una opción</option>
+                        <option value="activo" style="color:green; font-weight: bold;">activo</option>
+                        <option value="inactivo" style="color: red; font-weight: bold;">inactivo</option>
                     </select>
-                </form>
+                </div>
             </div>
+            <br>
+            <button class="btn btn-success" onclick="agregarClientes();">
+                Guardar
+            </button>
+            <button class="btn btn-success" onclick="limpiarClientes();">
+                Limpiar
+            </button>
         </div>
-        <div>
-            <center><button type="button" class="btn btn-success">Guardar</button></center>
-        </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-
     </div>
 </body>
 

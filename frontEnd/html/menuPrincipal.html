@@ -7,9 +7,12 @@
     <title>Menú principal</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../boostrap/bootstrap.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/clientes.js"></script>
 </head>
 
-<body>
+<body onload="listarClientes();">
 
     <div class="container-fluid">
         <div class="sidebar">
@@ -31,9 +34,9 @@
                         <a href="../html/agregarCliente.html">
                             <button type="button" class="btn btn-success" id="botonAgregarCliente">Agregar</button>
                         </a>
-                        </div>
-        
-        
+                    </div>
+
+
                 </div>
                 <div class="contenedor d-flex justify-content-evenly">
                     <div>
@@ -41,7 +44,7 @@
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un nombre"
                                 aria-label="Search">
-        
+
                         </form>
                     </div>
                     <div>
@@ -49,23 +52,23 @@
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Ingrese una ciudad"
                                 aria-label="Search">
-        
+
                         </form>
                     </div>
                     <div>
                         <h6>Filtrar por estado</h6>
                         <form class="form-inline my-2 my-lg-0">
-        
+
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Seleccione un estado</option>
-                                <option value="ACTIVO">ACTIVO</option>
-                                <option value="INACTIVO">INACTIVO</option>
-                                <option value="TODOS">TODOS</option>
+                                <option value="activo">ACTIVO</option>
+                                <option value="inactivo">INACTIVO</option>
+                                <option value="todos">TODOS</option>
                             </select>
                         </form>
                     </div>
-                    
-        
+
+
                 </div>
                 <div id="contenedorBotonesFiltros">
                     <div><button type="button" class="btn btn-success">Limpiar filtros</button></div>
@@ -75,7 +78,7 @@
                     <div>
                         <table class="table table-striped table-hover">
                             <thead>
-        
+
                                 <tr id="encabezado">
                                     <td>ID Cliente</td>
                                     <td>Tipo Identificación</td>
@@ -89,13 +92,82 @@
                                     <td>Acciones</td>
                                 </tr>
                             </thead>
-        
+
                             <tbody id="contenidoTabla">
-        
+
                             </tbody>
-                          </table>
+                        </table>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar medico</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <h1 style="margin-top: 100px">Crear Productos</h1>
+                        <h6>Todos los campos con asterisco son obligatorios</h6>
+                        <br>
+                        <div class="row">
+                            
+                            <div class="col col-xl-6 col-12">
+                                <b><label for="">Nombre del Producto: *</label></b>
+                                <input type="text" id="nombre_cliente" class="form-control"
+                                    onfocusout="validarNombre_cliente(this);" />
+                            </div>
+            
+                            <div class="col col-xl-6 col-12">
+                                <b><label for="">Descripción: *</label></b>
+                                <input type="text" id="apellido_cliente" class="form-control"
+                                    onfocusout="validarApellido_cliente(this);" />
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <b><label for="">Cantidad: *</label></b>
+                                <input type="number" id="telefono" class="form-control" onfocusout="validarTelefono(this);" />
+                            </div>
+            
+                            <div class="col col-xl-6 col-12">
+                                <b><label for="">Precio: *</label></b>
+                                <input type="text" id="direccion" class="form-control" onfocusout="validarDireccion(this);" />
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <b><label for="">% IVA: *</label></b>
+                                <input type="text" id="ciudad" class="form-control" onfocusout="validarCiudad(this);" />
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <b><label for="">% Descuento: *</label></b>
+                                <input type="email" id="correo_electronico" class="form-control"
+                                    onfocusout="validarCorreo(this);" />
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <b><label for="">Estado *</label></b>
+                                <select name="" id="estado" class="form-select" onfocusout="validarEstado(this);">
+                                    <option value="" selected disabled style="font-weight: bold;">Selecciona una opción</option>
+                                    <option value="activo" style="color:green; font-weight: bold;">activo</option>
+                                    <option value="inactivo" style="color: red; font-weight: bold;">inactivo</option>
+                                </select>
+                            </div>
+                             
+                        </div>
+                        <br>
+                        
+                    </div>
+                    <button class="btn btn-success" onclick="limpiarClientes();">
+                        Limpiar
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="actualizarCliente();">Actualizar</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>

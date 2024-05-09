@@ -1,6 +1,7 @@
 package com.example.moduloShoesStore.models;
 
 import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -32,14 +33,14 @@ public class clientes {
 	@Column (name="direccion", nullable=false,length=45)
 	private String direccion;
 	
-	@Column (name="ciudad", nullable=false,length=3645)
+	@Column (name="ciudad", nullable=false,length=45)
 	private String ciudad;
 	
 	@Column (name="correo_electronico", nullable=false,length=100)
 	private String correo_electronico;
 	
 	@Column (name="estado", nullable=false,length=15)
-	private estado estado;
+	private String estado;
 
 	public clientes() {
 		super();
@@ -47,7 +48,7 @@ public class clientes {
 
 	public clientes(String id_clientes, String tipo_identificacion, String identificacion, String nombre_cliente,
 			String apellido_cliente, String telefono, String direccion, String ciudad, String correo_electronico,
-			com.example.moduloShoesStore.models.estado estado) {
+			String estado) {
 		super();
 		this.id_clientes = id_clientes;
 		this.tipo_identificacion = tipo_identificacion;
@@ -133,15 +134,14 @@ public class clientes {
 		this.correo_electronico = correo_electronico;
 	}
 
-	public estado getEstado() {
+	public String getEstado() {
 		return estado;
 	}
 
-	public void setEstado(estado estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-
 	
-	
+	 
 	
 }

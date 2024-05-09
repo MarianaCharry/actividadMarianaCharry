@@ -21,26 +21,26 @@ public class productos {
 	private String descripcion;
 	
 	@Column (name="cantidad", nullable=false,length=36)
-	private int cantidad;
+	private String cantidad;
 	
 	@Column (name="precio", nullable=false,length=36)
 	private String precio;
 	
 	@Column (name="iva", nullable=false,length=2)
-	private int iva;
+	private String iva;
 	
 	@Column (name="descuento", nullable=false,length=2)
-	private int descuento;
+	private String descuento;
 	
 	@Column (name="estado", nullable=false,length=10)
-	private estado estado;
+	private String estado;
 
 	public productos() {
 		super();
 	}
 
-	public productos(String id_productos, String nombre_producto, String descripcion, int cantidad, String precio,
-			int iva, int descuento, com.example.moduloShoesStore.models.estado estado) {
+	public productos(String id_productos, String nombre_producto, String descripcion, String cantidad, String precio,
+			String iva, String descuento, String estado) {
 		super();
 		this.id_productos = id_productos;
 		this.nombre_producto = nombre_producto;
@@ -76,11 +76,11 @@ public class productos {
 		this.descripcion = descripcion;
 	}
 
-	public int getCantidad() {
+	public String getCantidad() {
 		return cantidad;
 	}
 
-	public void setCantidad(int cantidad) {
+	public void setCantidad(String cantidad) {
 		this.cantidad = cantidad;
 	}
 
@@ -92,30 +92,29 @@ public class productos {
 		this.precio = precio;
 	}
 
-	public int getIva() {
+	public String getIva() {
 		return iva;
 	}
 
-	public void setIva(int iva) {
+	public void setIva(String iva) {
 		this.iva = iva;
 	}
 
-	public int getDescuento() {
+	public String getDescuento() {
 		return descuento;
 	}
 
-	public void setDescuento(int descuento) {
+	public void setDescuento(String descuento) {
 		this.descuento = descuento;
 	}
 
-	public estado getEstado() {
+	public String getEstado() {
 		return estado;
 	}
 
-	public void setEstado(estado estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
-	
 	
 }

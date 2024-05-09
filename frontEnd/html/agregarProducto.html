@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar producto</title>
+    <script src="../js/productos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../boostrap/bootstrap.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
@@ -21,79 +24,62 @@
                 <li><a href="../html/ventas.html">Ventas</a></li>
             </ul>
         </div>
-        <div class="content">
-            <div class="container-fluid">
-                <h1 style="margin-top: 10%;">Crear Productos</h1>
-        <div class="contenedorNuevoCliente">
+        <div class="container">
+            <h1 style="margin-top: 100px">Crear Productos</h1>
+            <h6>Todos los campos con asterisco son obligatorios</h6>
+            <br>
+            <div class="row">
+                
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Nombre del Producto: *</label></b>
+                    <input type="text" id="nombre_producto" class="form-control"
+                        onfocusout="validarNombre_producto(this);" />
+                </div>
 
-            <div>
-                <h6>Nombre del Producto:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un producto"
-                        aria-label="Search">
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Descripción: *</label></b>
+                    <input type="text" id="descripcion" class="form-control"
+                        onfocusout="validarDescripcion(this);" />
+                </div>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Cantidad: *</label></b>
+                    <input type="text" id="cantidad" class="form-control" onfocusout="validarCantidad(this);" />
+                </div>
 
-                </form>
-            </div>
-            <div>
-                <h6>Descripción:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese una descripción"
-                        aria-label="Search">
-
-                </form>
-            </div>
-            <div>
-                <h6>Cantidad:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese una Cantidad"
-                        aria-label="Search">
-
-                </form>
-            </div>
-            <div>
-                <h6>Precio:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un Precio"
-                        aria-label="Search">
-
-                </form>
-            </div>
-            <div>
-                <h6>% IVA:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un iva"
-                        aria-label="Search">
-
-                </form>
-            </div>
-            <div>
-                <h6>% Descuento:</h6>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Ingrese un descuento"
-                        aria-label="Search">
-
-                </form>
-            </div>
-            <div>
-                <h6>Estado:</h6>
-                <form class="form-inline my-2 my-lg-0">
-
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Seleccione un estado</option>
-                        <option value="ACTIVO">ACTIVO</option>
-                        <option value="INACTIVO">INACTIVO</option>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Precio: *</label></b>
+                    <input type="text" id="precio" class="form-control" onfocusout="validarPrecio(this);" />
+                </div>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">% IVA: *</label></b>
+                    <input type="text" id="iva" class="form-control" onfocusout="validarIva(this);" />
+                </div>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">% Descuento: *</label></b>
+                    <input type="text" id="descuento" class="form-control"
+                        onfocusout="validarDescuento(this);" />
+                </div>
+                <div class="col col-xl-6 col-12">
+                    <b><label for="">Estado *</label></b>
+                    <select name="" id="estado" class="form-select" onfocusout="validarEstado(this);">
+                        <option value="" selected disabled style="font-weight: bold;">Selecciona una opción</option>
+                        <option value="activo" style="color:green; font-weight: bold;">activo</option>
+                        <option value="inactivo" style="color: red; font-weight: bold;">inactivo</option>
                     </select>
-                </form>
+                </div>
+                <div class="col col-xl-6 col-12" >
+                    <button class="btn btn-success" onclick="agregarProductos();">
+                        Agregar Producto
+                    </button>
+                    <button class="btn btn-primary" onclick="limpiarProductos();">
+                        Limpiar
+                    </button>
+                </div>
+                 
             </div>
+            <br>
+            
         </div>
-        <div>
-            <center><button type="button" class="btn btn-success">Agregar Producto</button></center>
-        </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-
     </div>
 </body>
 
