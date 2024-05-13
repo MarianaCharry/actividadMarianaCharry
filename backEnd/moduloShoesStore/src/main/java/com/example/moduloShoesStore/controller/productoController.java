@@ -1,6 +1,7 @@
 package com.example.moduloShoesStore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -70,6 +71,5 @@ public class productoController {
 			return new ResponseEntity<>("Error producto no encontrado", HttpStatus.BAD_REQUEST);
 		}
 	}
-
 }
 
