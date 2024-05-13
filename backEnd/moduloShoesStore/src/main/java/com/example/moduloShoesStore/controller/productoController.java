@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.moduloShoesStore.interfaceService.IProductoService;
@@ -46,5 +47,29 @@ public class productoController {
 		var ListaProductos = productoService.filtroProductos(filtro);
 		return new ResponseEntity<>(ListaProductos, HttpStatus.OK);
 	}
+	
+	@PutMapping("/{id_productos}")
+	public ResponseEntity<Object> update  ( @PathVariable String id_productos, @ModelAttribute("productos") productos productosUpdate){
+		var productos= productoService.findOne(id_productos).get();
+		if (productos != null) {
+			
+			productos.setId_productos(productosUpdate.getId_productos());
+			productos.setNombre_producto(productosUpdate.getNombre_producto());
+			productos.setDescripcion(productosUpdate.getDescripcion());
+			productos.setCantidad(productosUpdate.getCantidad());
+			productos.setPrecio(productosUpdate.getPrecio());
+			productos.setIva(productosUpdate.getIva());
+			productos.setDescuento(productosUpdate.getDescuento());
+			productos.setEstado(productosUpdate.getEstado());
+			
+			productoService.save(productos);
+			return new ResponseEntity<>("Guardado", HttpStatus.OK);
+			
+		}
+		else {
+			return new ResponseEntity<>("Error producto no encontrado", HttpStatus.BAD_REQUEST);
+		}
+	}
+
 }
 

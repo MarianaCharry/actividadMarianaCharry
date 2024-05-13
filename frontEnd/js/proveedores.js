@@ -1,7 +1,7 @@
-var url = "http://localhost:8080/api/v1/clientes/";
+var url = "http://localhost:8080/api/v1/proveedores/";
 
 
-function listarClientes() {
+function listarProveedores() {
   //METODO PARA LISTAR LOS CLIENTES
   //SE CREA LA PETICION AJAX
   
@@ -53,7 +53,7 @@ function listarClientes() {
         celdaTelefono.innerText = result[i]["telefono"];
         celdaDireccion.innerText = result[i]["direccion"];
         celdaCiudad.innerText = result[i]["ciudad"];
-        celdaCorreo.innerText = result[i]["correo_electronico"];
+        celdaCorreo.innerText = result[i]["correo"];
         celdaEstado.innerText = result[i]["estado"];
 
 

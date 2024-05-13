@@ -24,63 +24,63 @@
                 <li><a href="../html/ventas.html">Ventas</a></li>
             </ul>
         </div>
-        <div class="container">
-            <h1 style="margin-top: 100px">Crear Productos</h1>
-            <h6>Todos los campos con asterisco son obligatorios</h6>
-            <br>
-            <div class="row">
-                
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Nombre del Producto: *</label></b>
-                    <input type="text" id="nombre_producto" class="form-control"
-                        onfocusout="validarNombre_producto(this);" />
-                </div>
+        <div class="content">
+            <div class="container">
+                <h1 style="margin-top: 100px">Crear Productos</h1>
+                <h6>Todos los campos con asterisco son obligatorios</h6>
+                <br>
+                <div class="row">
 
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Descripción: *</label></b>
-                    <input type="text" id="descripcion" class="form-control"
-                        onfocusout="validarDescripcion(this);" />
-                </div>
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Cantidad: *</label></b>
-                    <input type="text" id="cantidad" class="form-control" onfocusout="validarCantidad(this);" />
-                </div>
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Nombre del Producto: *</label></b>
+                        <input type="text" id="nombre_producto" class="form-control"
+                            onfocusout="validarNombre_producto(this);" />
+                    </div>
 
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Precio: *</label></b>
-                    <input type="text" id="precio" class="form-control" onfocusout="validarPrecio(this);" />
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Descripción: *</label></b>
+                        <input type="text" id="descripcion" class="form-control"
+                            onfocusout="validarDescripcion(this);" />
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Cantidad: *</label></b>
+                        <input type="text" id="cantidad" class="form-control" onfocusout="validarCantidad(this);" />
+                    </div>
+
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Precio: *</label></b>
+                        <input type="text" id="precio" class="form-control" onfocusout="validarPrecio(this);" />
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">% IVA: *</label></b>
+                        <input type="text" id="iva" class="form-control" onfocusout="validarIva(this);" />
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">% Descuento: *</label></b>
+                        <input type="text" id="descuento" class="form-control" onfocusout="validarDescuento(this);" />
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Estado *</label></b>
+                        <select name="" id="estado" class="form-select" onfocusout="validarEstado(this);">
+                            <option value="" selected disabled style="font-weight: bold;">Selecciona una opción</option>
+                            <option value="activo" style="color:green; font-weight: bold;">activo</option>
+                            <option value="inactivo" style="color: red; font-weight: bold;">inactivo</option>
+                        </select>
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <button class="btn btn-success" onclick="agregarProductos();">
+                            Agregar Producto
+                        </button>
+                        <button class="btn btn-primary" onclick="limpiarProductos();">
+                            Limpiar
+                        </button>
+                    </div>
+
                 </div>
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">% IVA: *</label></b>
-                    <input type="text" id="iva" class="form-control" onfocusout="validarIva(this);" />
-                </div>
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">% Descuento: *</label></b>
-                    <input type="text" id="descuento" class="form-control"
-                        onfocusout="validarDescuento(this);" />
-                </div>
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Estado *</label></b>
-                    <select name="" id="estado" class="form-select" onfocusout="validarEstado(this);">
-                        <option value="" selected disabled style="font-weight: bold;">Selecciona una opción</option>
-                        <option value="activo" style="color:green; font-weight: bold;">activo</option>
-                        <option value="inactivo" style="color: red; font-weight: bold;">inactivo</option>
-                    </select>
-                </div>
-                <div class="col col-xl-6 col-12" >
-                    <button class="btn btn-success" onclick="agregarProductos();">
-                        Agregar Producto
-                    </button>
-                    <button class="btn btn-primary" onclick="limpiarProductos();">
-                        Limpiar
-                    </button>
-                </div>
-                 
+                <br>
+
             </div>
-            <br>
-            
         </div>
-    </div>
 </body>
 
 </html>

@@ -27,6 +27,7 @@ public class clienteService implements IClienteService  {
 	    List<clientes> listaClientes = (List<clientes>) data.findAll();
 	    return listaClientes;
 	}
+	
 
 	@Override
 	public int delete(String id_cliente) {
@@ -46,4 +47,6 @@ public class clienteService implements IClienteService  {
 		List <clientes> listaMedico=data.filtroCliente(filtro);
 		return listaMedico;
 	}
+	
+	
 }

@@ -22,76 +22,80 @@
                 <li><a href="../html/menuPrincipal.html">Clientes</a></li>
                 <li><a href="../html/productos.html">Productos</a></li>
                 <li><a href="../html/ventas.html">Ventas</a></li>
+                <li><a href="../html/proveedores.html">Proveedores</a></li>
             </ul>
         </div>
-        <div class="container">
-            <h1 style="margin-top: 100px">Agregar Nuevo Cliente</h1>
-            <h6>Todos los campos con asterisco son obligatorios</h6>
-            <br>
-            <div class="row">
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Tipo de Identificación: *</label></b>
-                    <select name="" id="tipo_identificacion" class="form-select">
-                        <option value="" selected disabled>Selecciona una opción</option>
-                        <option value="RC">Registro Civil</option>
-                        <option value="TI">Tarjeta de Identidad</option>
-                        <option value="CC">Cédula de Ciudadanía</option>
-                        <option value="CE">Cédula de Extranjería</option>
-                    </select>
+        <div class="content">
+            <div class="container">
+                <h1 style="margin-top: 100px">Agregar Nuevo Cliente</h1>
+                <h6>Todos los campos con asterisco son obligatorios</h6>
+                <br>
+                <div class="row">
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Tipo de Identificación: *</label></b>
+                        <select name="" id="tipo_identificacion" class="form-select">
+                            <option value="" selected disabled>Selecciona una opción</option>
+                            <option value="RC">Registro Civil</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                        </select>
+                    </div>
+
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Identificación: *</label></b>
+                        <input type="number" id="identificacion" step="1" class="form-control"
+                            onfocusout="validarIdentificacion(this);" />
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Nombre *</label></b>
+                        <input type="text" id="nombre_cliente" class="form-control"
+                            onfocusout="validarNombre_cliente(this);" />
+                    </div>
+
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Apellido *</label></b>
+                        <input type="text" id="apellido_cliente" class="form-control"
+                            onfocusout="validarApellido_cliente(this);" />
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Teléfono *</label></b>
+                        <input type="text" id="telefono" class="form-control" onfocusout="validarTelefono(this);" />
+                    </div>
+
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Dirección *</label></b>
+                        <input type="text" id="direccion" class="form-control" onfocusout="validarDireccion(this);" />
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Ciudad: *</label></b>
+                        <input type="text" id="ciudad" class="form-control" onfocusout="validarCiudad(this);" />
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Correo: *</label></b>
+                        <input type="email" id="correo_electronico" class="form-control"
+                            onfocusout="validarCorreo(this);" />
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <b><label for="">Estado *</label></b>
+                        <select name="" id="estado" class="form-select" onfocusout="validarEstado(this);">
+                            <option value="" selected disabled style="font-weight: bold;">Selecciona una opción</option>
+                            <option value="activo" style="color:green; font-weight: bold;">activo</option>
+                            <option value="inactivo" style="color: red; font-weight: bold;">inactivo</option>
+                        </select>
+                    </div>
+                    <div class="col col-xl-6 col-12">
+                        <button class="btn btn-success" onclick="agregarClientes();">
+                            Guardar
+                        </button>
+                        <button class="btn btn-success" onclick="limpiarClientes();">
+                            Limpiar
+                        </button>
+                    </div>
                 </div>
 
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Identificación: *</label></b>
-                    <input type="number" id="identificacion" step="1" class="form-control"
-                        onfocusout="validarIdentificacion(this);" />
-                </div>
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Nombre *</label></b>
-                    <input type="text" id="nombre_cliente" class="form-control"
-                        onfocusout="validarNombre_cliente(this);" />
-                </div>
-
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Apellido *</label></b>
-                    <input type="text" id="apellido_cliente" class="form-control"
-                        onfocusout="validarApellido_cliente(this);" />
-                </div>
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Teléfono *</label></b>
-                    <input type="text" id="telefono" class="form-control" onfocusout="validarTelefono(this);" />
-                </div>
-
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Dirección *</label></b>
-                    <input type="text" id="direccion" class="form-control" onfocusout="validarDireccion(this);" />
-                </div>
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Ciudad: *</label></b>
-                    <input type="text" id="ciudad" class="form-control" onfocusout="validarCiudad(this);" />
-                </div>
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Correo: *</label></b>
-                    <input type="email" id="correo_electronico" class="form-control"
-                        onfocusout="validarCorreo(this);" />
-                </div>
-                <div class="col col-xl-6 col-12">
-                    <b><label for="">Estado *</label></b>
-                    <select name="" id="estado" class="form-select" onfocusout="validarEstado(this);">
-                        <option value="" selected disabled style="font-weight: bold;">Selecciona una opción</option>
-                        <option value="activo" style="color:green; font-weight: bold;">activo</option>
-                        <option value="inactivo" style="color: red; font-weight: bold;">inactivo</option>
-                    </select>
-                </div>
             </div>
-            <br>
-            <button class="btn btn-success" onclick="agregarClientes();">
-                Guardar
-            </button>
-            <button class="btn btn-success" onclick="limpiarClientes();">
-                Limpiar
-            </button>
         </div>
-    </div>
 </body>
 
 </html>

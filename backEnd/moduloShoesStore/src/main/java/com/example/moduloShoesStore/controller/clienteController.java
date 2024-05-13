@@ -29,7 +29,6 @@ public class clienteController {
 	
 	}
 
-	
 	@GetMapping ("/")
 	public ResponseEntity<Object>findAll(){
 		var ListaCliente=clienteService.findAll();
